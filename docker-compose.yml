@@ -1,38 +1,64 @@
 version: "3.2"
 services:
+  phpcron:
+    build:
+      context: './phpcron/'
+      args:
+       PHP_VERSION: ${PHP_VERSION}
+    image: bptopenware/odoweb:3.1-phpcron
+    networks:
+      - backend
+    volumes:
+      - ${PROJECT_ROOT}/phpcron/php:/var/phpcron/
+      - ${PROJECT_ROOT}/phpcron/config:/etc/crontab
+    container_name: odoweb-batch
   php:
     build: 
       context: './php/'
       args:
        PHP_VERSION: ${PHP_VERSION}
+    image: bptopenware/odoweb:3.1-php
     networks:
       - backend
     volumes:
-      - ${PROJECT_ROOT}/:/var/www/html/
-    container_name: php
+      - ${PROJECT_ROOT}/enc.php:/var/www/html/enc.php
+      - ${PROJECT_ROOT}/dump:/var/www/dump
+      - ${PROJECT_ROOT}/app/php:/var/www/html/app
+      - ${PROJECT_ROOT}/vendor:/var/www/html/app/vendor
+    container_name: odoweb
   apache:
     build:
       context: './apache/'
       args:
        APACHE_VERSION: ${APACHE_VERSION}
+    image: bptopenware/odoweb:3.1-apache
     depends_on:
       - php
-      - mysql
     networks:
       - frontend
       - backend
     ports:
       - "80:80"
+      - "443:443"
     volumes:
-      - ${PROJECT_ROOT}/:/var/www/html/
+      - ${PROJECT_ROOT}/app/html:/usr/local/apache2/htdocs/app/html
+      - ${PROJECT_ROOT}/app/css:/usr/local/apache2/htdocs/app/css
+      - ${PROJECT_ROOT}/app/img:/usr/local/apache2/htdocs/app/img
+      - ${PROJECT_ROOT}/app/JavaScript:/usr/local/apache2/htdocs/app/JavaScript
+      - ${PROJECT_ROOT}/apachessl:/etc/apachessl
+      - ${PROJECT_ROOT}/odoapache.conf:/usr/local/apache2/conf/odoapache.conf
     container_name: apache
   mysql:
-    image: mysql:${MYSQL_VERSION:-latest}
+    build:
+      context: './mysql/'
+      args:
+       MYSQL_VERSION: ${MYSQL_VERSION}
+    image: bptopenware/odoweb:3.1-mysql
     restart: always
     ports:
-      - "3306:3306"
+      - "3310:3306"
     volumes:
-            - data:/var/lib/mysql
+      - ${PROJECT_ROOT}/data/m1:/var/lib/mysql
     networks:
       - backend
     environment:
@@ -40,9 +66,7 @@ services:
       MYSQL_DATABASE: "${DB_NAME}"
       MYSQL_USER: "${DB_USERNAME}"
       MYSQL_PASSWORD: "${DB_PASSWORD}"
-    container_name: mysql
+    container_name: mysqlmaster
 networks:
   frontend:
   backend:
-volumes:
-    data:

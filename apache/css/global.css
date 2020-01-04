@@ -1,0 +1,575 @@
+
+
+* {
+    margin: 0;
+
+  }
+
+
+html, body {
+
+    font-family : Arial, serif;
+    height: 100%;
+  }
+
+
+h1, h2, h3 {
+    color: #616583;
+  }
+
+
+h2 {
+    font-size: 2em;
+  }
+
+
+.sectiontitle {
+	background-image: url(../images/img03.jpg);
+	text-align: center;
+	font-size: 1.3em;
+	font-weight: bold;
+	color: #FFFFFF;
+	margin-bottom: 10px;
+	border: 1px solid #000000;
+	padding-left: 20px;
+	padding-right: 20px;
+  }
+
+.subsectiontitle {
+	background-image: url(../images/img03.jpg);
+	text-align: center;
+	font-size: 1em;
+	font-weight: bold;
+	color: #FFFFFF;
+	margin-bottom: 10px;
+	border: 1px solid #000000;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+
+.smODOSCartTitle {
+	text-align: center;
+	font-size: 1em;
+	font-weight: bold;
+	color: #FFFFFF;
+	margin-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.smODOSCartTitle a {
+	color: #FFFFFF;
+}
+
+p, blockquote {
+    margin-bottom: 1.5em;
+  }
+
+
+p {
+    text-align : justify;
+  }
+
+
+blockquote {
+    background: #dcdedc;
+    margin-left: 2em;
+    margin-right: 2em;
+    font-style: italic;
+  }
+
+
+a {
+    color: #0d9b09;
+    text-decoration: none;
+  }
+
+
+a:hover {
+    text-decoration: none;
+  }
+
+
+img {
+    border: none;
+  }
+
+pre {
+        border:1px dashed #E1E1E1;
+        color: #0cc608;
+        background:#5f5059;
+        font-family:monospace;
+        overflow:auto;
+        font-size:12px;
+        padding:0.5em;
+}
+
+
+.Right {
+    top: 0px;
+    margin-left: 201px;
+    padding-left: 1%;
+    padding-right: 2%;
+    padding-bottom: 25px;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+
+  }
+  
+#footer {
+    clear : both;
+    height : 25px;
+    margin-left : 201px;
+    margin-top : -25px;
+    padding-left : 1%;
+    padding-right : 2%;
+    position : relative;
+    text-align : center;
+  }
+
+
+.LeftNav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    color: #FFFFFF;
+    float: left;
+    width: 200px;
+    height: 100%;
+    background-image: url(../images/leftnav.jpg);
+    background-repeat: repeat;
+    overflow: auto;
+  }
+  
+#MiddleContent {
+    top: 0px;
+    left: 0px;
+    margin-left: 201px;
+    margin-right: 205px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+    padding-bottom: 25px;
+  }
+
+
+#RightContent {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    float: right;
+    width: 205px;
+    height: 100%;
+    padding-bottom: 25px;
+  }
+
+/* ODO Login styles */
+.loginheader {
+	
+}
+
+.loginLeft {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: #FFFFFF;
+    float: left;
+    width: 200px;
+    height: 100%;
+    background-image: url(../images/leftnav.jpg);
+    background-repeat: repeat;
+    overflow: auto;
+  }
+ 
+.loginCenter {
+  
+	top: 0px;
+	left: 201px;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 25px;
+	text-align: center;
+
+  }
+
+
+.loginRight {
+	
+}
+
+.loginFooter {
+	
+}
+
+#loginerror {
+		text-align: center;
+		font-size: 1.9em;
+		font-weight: bold;
+		margin-top: 10%;
+		padding-left: 33%;
+		padding-right: 25%;
+		color: #616583;
+}
+
+#loginmessage {
+		text-align: center;
+		font-size: 1.4em;
+		margin-top: 10%;
+		padding-left: 33%;
+		padding-right: 25%;
+		color: #616583;
+}
+
+.loginbox {
+padding-left: 33%;
+  padding-right: 25%;
+  margin-top:10%;
+top: 0px;  
+left: 202px;
+position:fixed;
+
+}
+
+.logintitle {
+   height: 25px;
+    padding: 5px 0 0 15px;
+	border-top: 2px solid #000000;
+  	border-left: 2px solid #000000;
+	border-right: 2px solid #000000;
+    background: url(../images/img03.jpg);
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FFFFFF;
+  text-align: center;
+}
+
+.logincontent {
+    font-weight: BOLD;
+    padding: 15px;
+  	border-bottom: 2px solid #000000;
+  	border-left: 2px solid #000000;
+	border-right: 2px solid #000000;
+    background: url(../images/img04.jpg);
+    border-top: 1px solid #000000;
+  text-align: center;
+}
+
+
+/* Boxed Style */
+
+
+.boxed {
+    border: 2px solid #000000;
+    margin-right: 1em;
+  }
+
+
+.boxed ul a {
+    color: black;
+    font-weight: bold;
+    font-size: small;
+  }
+
+
+.boxed .title {
+    height: 25px;
+    padding: 5px 0 0 15px;
+    background: url(../images/img03.jpg);
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FFFFFF;
+  }
+
+.boxed .title a {
+    color: #FFFFFF;
+}
+
+.boxed .content {
+    font-weight: BOLD;
+    padding: 15px;
+    background: url(../images/img04.jpg);
+    border-top: 1px solid #000000;
+  }
+
+.boxed .content h2 {
+   color: #FFFFFF;
+
+}
+
+.boxed .content ul {
+   padding: 0px;
+}
+
+/* Logo */
+
+
+
+#logo {
+    padding: 40px 0 40px 0;
+    background: url(../images/Logo.jpg) no-repeat center top;
+    text-align: center;
+  }
+
+
+.floatright {
+    float: right;
+    margin: 10px 10px 10px 10px;
+	border: 1px solid #000000;
+  }
+
+
+.floatleft {
+    float: left;
+    margin: 10px 10px 10px 10px;
+  }
+
+/* Post */
+
+
+
+.post {
+    padding: 2em 0 0 0;
+  }
+
+
+.post .title {
+    text-decoration: none;
+  }
+
+
+.post .title:hover {
+    text-decoration: underline;
+  }
+
+
+.post .date {
+    margin: -1.4em 0 .2em 0;
+    text-align: right;
+    font-size: 1em;
+  }
+
+
+.post .date .month {
+  }
+
+
+.post .date .day {
+  }
+
+
+.post .date .year {
+  }
+
+
+.post .meta {
+    padding: 1em;
+    background: #656983 url(../images/img04.jpg);
+    border: 2px solid #000000;
+    font-size: .8em;
+  }
+
+
+.post .meta p {
+    margin: 0;
+  }
+
+
+.post .story {
+    padding: 1em;
+  }
+
+
+.post .story p, .post .story blockquote, .post .story ul, .post .story ol {
+    line-height: 1.7em;
+  }
+
+
+.imagepad {
+    padding-right: 10px;
+  }
+
+/*info tooltip. Remove before release*/
+a.info{
+    position:relative; /*this is the key*/
+    z-index:24; 
+    color:#000;
+    text-decoration:none}
+
+a.info:hover{z-index:25;}
+
+a.info span{display: none}
+
+a.info:hover span{ /*the span will display just on :hover state*/
+    display:block;
+    position:absolute;
+    top:2em; left:2em; width:15em;
+    border:1px solid #0cf;
+    background-color:#cff; color:#000;
+    text-align: center}
+
+/* Registration */
+regboxed
+
+
+.regboxed {
+    border: 2px solid #000000;
+    margin-right: 1em;
+  }
+
+
+.regboxed ul a {
+    color: black;
+    font-weight: bold;
+    font-size: small;
+  }
+
+
+.regboxed .regtitle {
+    height: 25px;
+    padding: 5px 0 0 15px;
+    background: url(../images/img03.jpg);
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FFFFFF;
+	text-align: center;
+  }
+
+#regcontentemailsublabel {
+		text-align: right;
+}
+
+#regcontentresetanswersublabel {
+		text-align: right;
+}
+
+#regcontentspam {
+		text-align: center;
+}
+
+#regcontentspamlabel {
+		text-align: center;
+}
+
+#regcontenttos {
+		text-align: center;
+}
+
+#regcontentsubmitdiv {
+		text-align: center;
+}
+
+#regcontentmsg {
+		width: 300px;
+}
+
+.regboxed .regtitle a {
+    color: #FFFFFF;
+}
+
+.regboxed .regcontentlabel {
+		text-align: right;
+}
+.regboxed .regcontent {
+    font-weight: BOLD;
+    padding: 15px;
+    background: url(../images/img04.jpg);
+    border-top: 1px solid #000000;
+  }
+
+.regboxed .regcontent h2 {
+   color: #FFFFFF;
+
+}
+
+.regboxed .regcontent ul {
+   padding: 0px;
+}
+
+/* public site */
+.ODOProdHorizontalName {
+ font-weight: bold; 
+}
+
+
+.ODOStoreBlock {
+  border: 1px solid #000000;
+}
+
+.ODOStoreBlock tr {
+  background: url(../images/img04.jpg);
+  
+}
+
+.ODOStoreBlock td {
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border-top: 1px solid #000000;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+
+.ODOStoreBlock TH {
+    height: 25px;
+    padding: 5px 0 0 15px;
+    background: url(../images/img03.jpg);
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FFFFFF;
+	text-align: center;
+  }
+
+
+.MyInfoBlock {
+  border: 1px solid #000000;
+ text-align: center;  
+}
+
+.MyInfoBlock tr {
+  background: url(../images/img04.jpg);
+  
+}
+
+.MyInfoBlock td {
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+
+.MyInfoBlock a {
+  font-weight: bold;
+}
+
+.MyInfoTitle {
+    height: 25px;
+    padding: 5px 0 0 15px;
+    background: url(../images/img03.jpg);
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FFFFFF;
+	text-align: center;
+  }
+
+.MyInfoMessage {
+	background: url(../images/img04.jpg);
+	font-size: 1em;
+	color: #000000;
+	text-align: center;
+	padding: 5px;
+}
+
+.MyInfoError {
+	background: url(../images/img04.jpg);
+	font-size: 1em;
+	color: #ff0457;
+	text-align: center;
+	padding: 5px;
+}
+
+.MyInfoBlocksubmit {
+	text-align: center;
+}
