@@ -1,6 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `BPTPOINT` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `BPTPOINT`;
--- MySQL dump 10.13  Distrib 5.7.28, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.29, for Linux (x86_64)
 --
 -- Host: 192.168.1.101    Database: BPTPOINT
 -- ------------------------------------------------------
@@ -16,6 +14,14 @@ USE `BPTPOINT`;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `BPTPOINT`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `BPTPOINT` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `BPTPOINT`;
 
 --
 -- Table structure for table `AdminVerify`
@@ -71,7 +77,7 @@ CREATE TABLE `Constants` (
 
 LOCK TABLES `Constants` WRITE;
 /*!40000 ALTER TABLE `Constants` DISABLE KEYS */;
-INSERT INTO `Constants` VALUES (1,'VERIFYUIDPERPAGE','0','This Will Verify a User on Every page view',1),(2,'EMAILTHRESHOLD','3','This is the Severity Level to e-mail the system Admin',1),(3,'SYSADMINEMAILADDY','admin@localhost','E-mail address of user to e-mail',1),(4,'EMAILEVENTS','1','This flag is set to e-mail the System Admin',1),(5,'EXITONALLERRORS','1','If Set then all errors will exit the script.',1),(6,'SHOWERRORS','2','This flag is used to show errors in your pages to the user.',1),(7,'ALLOWUSERANYPAGELOGIN','1','This flag is used to allow a user to Login at any web page in the system.',1),(8,'NUMBEROFVALIDPWORDTRIES','5','This is the number of password tries a user can have',1),(9,'SERVERNAME','ODOWeb Test','This is the server\'s name',1),(10,'GLOBALUSEROBJECTS','1','If set then all user Objects will be placed into the global array.',1),(11,'LOCKOUTONSELFPASSRESET','1','If set then attempts to answer the question will count against them as well.',1),(12,'ADMINOBJECTSINNONADMINPAGES','1','if set then admin Objects can be loaded on non admin flagged pages',1),(13,'REQUIREQARESETONREGISTRATION','1','if set then any user that Registers will have to answer the registration question and answers before being registered',1),(14,'ADMINVERIFYSTANDARDUSERREG','0','if set then any standard user registering will have to wait for the admin to confirm their registration',1),(15,'ALLOWGUESTSTANDARDREG','1','if set then guests can register as a standard user. Verification may still be required depending on AdminVerify flag.',1),(16,'ALLOWMULTIPLESESSIONS','1','Set this to prevent someone from logging in more than once at a time. Older Session is logged off on new login.',1),(17,'WRONGUSERNAMESEVLEVEL','3','Set the severity level of a user entering the wrong username.',1),(18,'ACCOUNTLOCKEDSEVLEVEL','2','Set the severity level of a user getting their account locked out.',1),(19,'LOGINAFTERACCTLOCKEDSEV','3','Set the severity level of a user trying to login after their account was locked.',1),(20,'WRONGPASSWORDSEVLEVEL','2','Set the severity level of a user failing to login correctly.',1),(21,'SERVERADDRESS','localhost','This is the Server Address and is used in many sections of ODOWeb. Please set to your domain name.',1),(22,'TOSONREGISTER','1','This is a flag to require confirming that the user read the TOS for the site.',1),(23,'GETFILEURLPATH','GetFile.php','The location of the Get File script on the local server',1),(24,'GETIMAGEURLPATH','GetImage.php','The location of the GetImage script on the local server',1),(26,'DEFAULTREGCOMPLETEURL','index.php?pg=RegisterComplete','The Default URL to direct the user to when registration is complete.',1),(27,'ENCRYPTODOUSER','1','This enables or disables encrypting fields of ODOUsers table. This will not encrypt or decrypt previous entries.',1),(28,'ODOSHA','3','Password encryption level. 3=md5sum 2=sha256 1=sha512',1),(29,'REGREPLYEMAIL','admin@localhost','The reply address for registration e-mails.',1),(30,'JSVALIDATELOGIN','0','Login form will call loginvalidate js function instead of submitting form.',1),(31,'LOGOUTSEVLEVEL','3','Sev level of a user logging out.',1),(32,'LOGINSEVLEVEL','3','Sev level of a user logging in.',1),(33,'ODOUSERUPDATE','3','Log level a user updating their information.',1),(34,'ODOUSERUPDATEERROR','1','Error level of a user attempting to update their information but failed.',1),(36,'DUMPEVALERROR','0','Dumps on eval error',1),(37,'DUMPEVALDIR','/var/www/dump/','path to dir to dump evals to',1),(48,'loginphp','1','Flag to force login script to point to login.php',1),(49,'DEFAULTAFTERLOGINPAGE','Home','Page to goto after login is complete regardless of what was passed in the request',1),(50,'USEREMOTEEMAILSERVER','0','If set to 1 the remote e-mail server will be used to send emails for log events',1),(51,'REMOTESERVERKEY','YOURKEY','Set this to a unique id key. You don\'t want to allow just anyone to send emails using your server right?',1),(52,'REMOTEEMAILSERVERADDPARMS','','If this string is greater than 0 then all additional params will be tacked onto the request. If you\'re using ODOCMS index.php you could add pg=yourpage here',1),(53,'REMOTEEMAILSERVERURL','http://localhost','Use your remote e-mail server address here',1),(54,'LOGSESSIONTIME','1','If set to 1 then session time is logged to apache logger.',1),(55,'LOGDBQUERYTIME','1','If set to 1 then DB query time is logged to apache logger',1),(56,'USESYSTEMLOG','0','If set to 1 then logging is set to the local system logger',1),(57,'FORWARDFORHEADER','X-Forwarded-For','Set this to the header used to indicate a forwarded for ip. This would be defined by your reverse proxy',1),(58,'INSTANCEIDHEADER','X-CF-APP-INSTANCE','Set this to the header used to indicate  the instance id of the node in the cluster.',1),(59,'USESTICKYSESSION','0','Set to 1 to indicate that the STICKYSESSIONHEADER name will be set as a the STICKYSESSIONCOOKIE name',1),(60,'STICKYSESSIONCOOKIE','VCAP_ID','Cookie to be set with the STICKYSESSIONHEADER',1),(61,'STICKYSESSIONHEADER','X-CF-APP-INSTANCE','Session header name of the instance id',1),(63,'CACHEPAGES','0','Cache pages on server instead of using eval',1),(64,'OURCACHEPATH','','Cache location',1),(65,'REMOTEEMAILENCRYPTED','0','If set to 1 the data stored in MailQueue table is encrypted',1);
+INSERT INTO `Constants` VALUES (1,'VERIFYUIDPERPAGE','0','This Will Verify a User on Every page view',1),(2,'EMAILTHRESHOLD','3','This is the Severity Level to e-mail the system Admin',1),(3,'SYSADMINEMAILADDY','admin@localhost','E-mail address of user to e-mail',1),(4,'EMAILEVENTS','1','This flag is set to e-mail the System Admin',1),(5,'EXITONALLERRORS','1','If Set then all errors will exit the script.',1),(6,'SHOWERRORS','2','This flag is used to show errors in your pages to the user.',1),(7,'ALLOWUSERANYPAGELOGIN','1','This flag is used to allow a user to Login at any web page in the system.',1),(8,'NUMBEROFVALIDPWORDTRIES','5','This is the number of password tries a user can have',1),(9,'SERVERNAME','ODOWeb Test','This is the server\'s name',1),(10,'GLOBALUSEROBJECTS','1','If set then all user Objects will be placed into the global array.',1),(11,'LOCKOUTONSELFPASSRESET','1','If set then attempts to answer the question will count against them as well.',1),(12,'ADMINOBJECTSINNONADMINPAGES','1','if set then admin Objects can be loaded on non admin flagged pages',1),(13,'REQUIREQARESETONREGISTRATION','1','if set then any user that Registers will have to answer the registration question and answers before being registered',1),(14,'ADMINVERIFYSTANDARDUSERREG','0','if set then any standard user registering will have to wait for the admin to confirm their registration',1),(15,'ALLOWGUESTSTANDARDREG','1','if set then guests can register as a standard user. Verification may still be required depending on AdminVerify flag.',1),(16,'ALLOWMULTIPLESESSIONS','1','Set this to prevent someone from logging in more than once at a time. Older Session is logged off on new login.',1),(17,'WRONGUSERNAMESEVLEVEL','3','Set the severity level of a user entering the wrong username.',1),(18,'ACCOUNTLOCKEDSEVLEVEL','2','Set the severity level of a user getting their account locked out.',1),(19,'LOGINAFTERACCTLOCKEDSEV','3','Set the severity level of a user trying to login after their account was locked.',1),(20,'WRONGPASSWORDSEVLEVEL','2','Set the severity level of a user failing to login correctly.',1),(21,'SERVERADDRESS','localhost','This is the Server Address and is used in many sections of ODOWeb. Please set to your domain name.',1),(22,'TOSONREGISTER','1','This is a flag to require confirming that the user read the TOS for the site.',1),(23,'GETFILEURLPATH','GetFile.php','The location of the Get File script on the local server',1),(24,'GETIMAGEURLPATH','GetImage.php','The location of the GetImage script on the local server',1),(26,'DEFAULTREGCOMPLETEURL','index.php?pg=RegisterComplete','The Default URL to direct the user to when registration is complete.',1),(27,'ENCRYPTODOUSER','1','This enables or disables encrypting fields of ODOUsers table. This will not encrypt or decrypt previous entries.',1),(28,'ODOSHA','3','Password encryption level. 3=md5sum 2=sha256 1=sha512',1),(29,'REGREPLYEMAIL','admin@localhost','The reply address for registration e-mails.',1),(30,'JSVALIDATELOGIN','0','Login form will call loginvalidate js function instead of submitting form.',1),(31,'LOGOUTSEVLEVEL','1','Sev level of a user logging out.',1),(32,'LOGINSEVLEVEL','1','Sev level of a user logging in.',1),(33,'ODOUSERUPDATE','3','Log level a user updating their information.',1),(34,'ODOUSERUPDATEERROR','1','Error level of a user attempting to update their information but failed.',1),(36,'DUMPEVALERROR','0','Dumps on eval error',1),(37,'DUMPEVALDIR','/var/www/dump/','path to dir to dump evals to',1),(48,'loginphp','1','Flag to force login script to point to login.php',1),(49,'DEFAULTAFTERLOGINPAGE','Home','Page to goto after login is complete regardless of what was passed in the request',1),(50,'USEREMOTEEMAILSERVER','1','If set to 1 the remote e-mail server will be used to send emails for log events',1),(51,'REMOTESERVERKEY','YOURKEY','Set this to a unique id key. You don\'t want to allow just anyone to send emails using your server right?',1),(52,'REMOTEEMAILSERVERADDPARMS','','If this string is greater than 0 then all additional params will be tacked onto the request. If you\'re using ODOCMS index.php you could add pg=yourpage here',1),(53,'REMOTEEMAILSERVERURL','http://localhost','Use your remote e-mail server address here',1),(54,'LOGSESSIONTIME','0','If set to 1 then session time is logged to apache logger.',1),(55,'LOGDBQUERYTIME','0','If set to 1 then DB query time is logged to apache logger',1),(56,'USESYSTEMLOG','0','If set to 1 then logging is set to the local system logger',1),(57,'FORWARDFORHEADER','X-Forwarded-For','Set this to the header used to indicate a forwarded for ip. This would be defined by your reverse proxy',1),(58,'INSTANCEIDHEADER','X-CF-APP-INSTANCE','Set this to the header used to indicate  the instance id of the node in the cluster.',1),(59,'USESTICKYSESSION','0','Set to 1 to indicate that the STICKYSESSIONHEADER name will be set as a the STICKYSESSIONCOOKIE name',1),(60,'STICKYSESSIONCOOKIE','VCAP_ID','Cookie to be set with the STICKYSESSIONHEADER',1),(61,'STICKYSESSIONHEADER','X-CF-APP-INSTANCE','Session header name of the instance id',1),(63,'CACHEPAGES','0','Cache pages on server instead of using eval',1),(64,'OURCACHEPATH','','Cache location',1),(65,'REMOTEEMAILENCRYPTED','0','If set to 1 the data stored in MailQueue table is encrypted',1);
 /*!40000 ALTER TABLE `Constants` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -216,9 +222,10 @@ DROP TABLE IF EXISTS `MailQueue`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `MailQueue` (
   `idMailQueue` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `rcvMail` varchar(128) NOT NULL,
-  `subject` varchar(254) NOT NULL,
-  `headers` varchar(254) NOT NULL,
+  `rcvMail` varbinary(128) NOT NULL,
+  `rcvName` varbinary(128) DEFAULT NULL,
+  `subject` varbinary(254) NOT NULL,
+  `headers` varbinary(254) DEFAULT NULL,
   `message` longtext NOT NULL,
   `encrypted` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idMailQueue`),
@@ -423,7 +430,7 @@ CREATE TABLE `ODOLogs` (
   `InstanceId` varchar(255) DEFAULT NULL,
   `ModID` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`PriKey`)
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -677,7 +684,7 @@ CREATE TABLE `ODOUsers` (
 
 LOCK TABLES `ODOUsers` WRITE;
 /*!40000 ALTER TABLE `ODOUsers` DISABLE KEYS */;
-INSERT INTO `ODOUsers` VALUES (2,'guest',_binary 'letmein',_binary 'Guest',_binary 'First Name',_binary 'test@nowhere.net',0,NULL,NULL,0,0,0,3,NULL,NULL),(1342,'admin',_binary '21232f297a57a5a743894a0e4a801fc3',_binary 'admin lastname',_binary 'admin',_binary 'admin@localhost',0,1,_binary '$6$rounds=5000$a4g2hjwtOK9kA3pw$AUaQ0Xk2MseJVx8O0XAsuGQWHMVrT.Zf0Lj2GaN.L9lit0ex3gziAlAQ61eXxVEmfaXZOr97u//ziYLiqEFly0',0,1,0,3,NULL,'2020-01-01 03:10:03'),(1343,'testUserOne',_binary 'a92e7826a1d9fd3a0d7d7f3580b99635',_binary 'êç)øùA\ﬂv¿\Ó˙\rG`®‘∫Q-¡Côéˆ\‘˘\√zç',_binary 'WΩuéà\∆áÅ\⁄$Y©U’¨G+¡Côéˆ\‘˘\√zç',_binary 'Ä !:¿≠\ﬁ|!ò∫ü)\‡h^\Ô¶C7$1¸\Œ|ö°wü≥\‰Òa\‘jmC⁄õ\«\">vW\—',1,1,_binary '3a368818b7341d48660e8dd6c5a77dbe',0,0,1,3,_binary '¸ê\ÈIÜÿπ\–\ÓC\ÏóÙ9b}E\„g#',NULL);
+INSERT INTO `ODOUsers` VALUES (2,'guest',_binary 'letmein',_binary 'Guest',_binary 'First Name',_binary 'test@nowhere.net',0,NULL,NULL,0,0,0,3,NULL,NULL),(1342,'admin',_binary '21232f297a57a5a743894a0e4a801fc3',_binary 'admin lastname',_binary 'admin',_binary 'admin@localhost',0,1,_binary '$6$rounds=5000$a4g2hjwtOK9kA3pw$AUaQ0Xk2MseJVx8O0XAsuGQWHMVrT.Zf0Lj2GaN.L9lit0ex3gziAlAQ61eXxVEmfaXZOr97u//ziYLiqEFly0',0,1,0,3,NULL,'2020-02-15 18:25:59'),(1343,'testUserOne',_binary 'a92e7826a1d9fd3a0d7d7f3580b99635',_binary 'êç)øùA\ﬂv¿\Ó˙\rG`®‘∫Q-¡Côéˆ\‘˘\√zç',_binary 'WΩuéà\∆áÅ\⁄$Y©U’¨G+¡Côéˆ\‘˘\√zç',_binary 'Ä !:¿≠\ﬁ|!ò∫ü)\‡h^\Ô¶C7$1¸\Œ|ö°wü≥\‰Òa\‘jmC⁄õ\«\">vW\—',1,1,_binary '3a368818b7341d48660e8dd6c5a77dbe',0,0,1,3,_binary '¸ê\ÈIÜÿπ\–\ÓC\ÏóÙ9b}E\„g#',NULL);
 /*!40000 ALTER TABLE `ODOUsers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -983,35 +990,14 @@ LOCK TABLES `newsGACL` WRITE;
 INSERT INTO `newsGACL` VALUES (11,5);
 /*!40000 ALTER TABLE `newsGACL` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2020-01-03  2:21:42
-CREATE DATABASE  IF NOT EXISTS `BPTPOINTSESS` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `BPTPOINTSESS`;
--- MySQL dump 10.13  Distrib 5.7.28, for Linux (x86_64)
 --
--- Host: 192.168.1.101    Database: BPTPOINTSESS
--- ------------------------------------------------------
--- Server version	5.7.25
+-- Current Database: `BPTPOINTSESS`
+--
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `BPTPOINTSESS` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `BPTPOINTSESS`;
 
 --
 -- Table structure for table `ODOSessions`
@@ -1047,4 +1033,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-01-03  2:21:42
+-- Dump completed on 2020-02-15 21:31:06

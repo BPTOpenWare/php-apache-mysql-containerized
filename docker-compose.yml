@@ -9,8 +9,10 @@ services:
     networks:
       - backend
     volumes:
-      - ${PROJECT_ROOT}/phpcron/php:/var/phpcron/
-      - ${PROJECT_ROOT}/phpcron/config:/etc/crontab
+      - ${PROJECT_ROOT}/phpcron/jobs:/phpcron/jobs
+      - ${PROJECT_ROOT}/phpcron/config:/etc/crontabs/phpcron
+      - ${PROJECT_ROOT}/enc.php:/phpcron/enc.php
+      - ${PROJECT_ROOT}/vendor:/phpcron/vendor
     container_name: odoweb-batch
   php:
     build: 
@@ -24,7 +26,7 @@ services:
       - ${PROJECT_ROOT}/enc.php:/var/www/html/enc.php
       - ${PROJECT_ROOT}/dump:/var/www/dump
       - ${PROJECT_ROOT}/app/php:/var/www/html/app
-      - ${PROJECT_ROOT}/vendor:/var/www/html/app/vendor
+      - ${PROJECT_ROOT}/vendor:/var/www/vendor
     container_name: odoweb
   apache:
     build:

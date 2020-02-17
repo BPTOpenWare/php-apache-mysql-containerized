@@ -74,6 +74,29 @@ class ourConstants {
 	 */
 	private $dbsessname = "";
 	
+	/**
+	 * Default is to use local mail server
+	 * @var unknown $useLocalMail
+	 */
+	private $useLocalMail = TRUE;
+	
+	/**
+	 * Update with your email server you have
+	 * relay rights to
+	 * @var string $localMailHostPort
+	 */
+	private $localMailHostPort = "";
+	
+	/**
+	 * your API key for sendgrid
+	 * @var unknown
+	 */
+	private $sendgridAPI = "";
+	
+	private $sendgridFromEmail = "";
+	
+	private $sendgridFromName = "";
+	
 	function __construct() {
 		
 		$this->aesKey = "REPLACEMEWITHARANDOMKEYOFEQUALLN";
@@ -82,14 +105,19 @@ class ourConstants {
 		$this->SHA256h = '$5$rounds=5000$REPLACEMEWITHAHASHSALTKEY$';
 		$this->SHA512h = '$6$rounds=5000$REPLACEMEWITHAHASHSALTKEY$';
 		$this->dbipadd = "mysqlmaster";
-		$this->dbuname = "TESTACCT";
+		$this->dbuname = "bptuname";
 		$this->dbpword = "testacct";
 		$this->dbname = "BPTPOINT";
 		$this->useDBSession = TRUE;
 		$this->dbsessipadd = "mysqlmaster";
-		$this->dbsessuname = "TESTACCTSESS";
+		$this->dbsessuname = "bptunamesess";
 		$this->dbsesspword = "testacctsess";
 		$this->dbsessname = "BPTPOINTSESS";
+		$this->useLocalMail = TRUE;
+		$this->localMailHostPort = "127.0.0.1:25";
+		$this->sendgridAPI = "";
+		$this->sendgridFromEmail = "someone@example.com";
+		$this->sendgridFromName = "someone";
 	}
 	
 	public function getAesKey() {
@@ -140,18 +168,43 @@ class ourConstants {
 		return $this->dbsessname;
 	}
 	
+	public function isUseLocalMail() {
+		return $this->useLocalMail;
+	}
+	
+	public function getLocalMailHostPort() {
+		return $this->localMailHostPort;
+	}
+	
+	public function getSendGridAPI() {
+		return $this->sendgridAPI;	
+	}
+	
+	public function getSendgridFromEmail() {
+		return $this->sendgridFromEmail;
+	}
+	
+	public function getSendgridFromName() {
+		return $this->sendgridFromName;
+	}
+	
 	function __wakeup() {
 		$this->aesKey = "REPLACEMEWITHARANDOMKEYOFEQUALLN";
 		$this->SHA256h = '$5$rounds=5000$REPLACEMEWITHAHASHSALTKEY$';
 		$this->SHA512h = '$6$rounds=5000$REPLACEMEWITHAHASHSALTKEY$';
-		$this->dbipadd = "127.0.0.1";
-		$this->dbuname = "TESTACCT";
+		$this->dbipadd = "mysqlmaster";
+		$this->dbuname = "bptuname";
 		$this->dbpword = "testacct";
 		$this->dbname = "BPTPOINT";
-		$this->dbsessipadd = "127.0.0.1";
-		$this->dbsessuname = "TESTACCTSESS";
+		$this->dbsessipadd = "mysqlmaster";
+		$this->dbsessuname = "bptunamesess";
 		$this->dbsesspword = "testacctsess";
 		$this->dbsessname = "BPTPOINTSESS";
+		$this->useLocalMail = TRUE;
+		$this->localMailHostPort = "127.0.0.1:25";
+		$this->sendgridAPI = "";
+		$this->sendgridFromEmail = "someone@example.com";
+		$this->sendgridFromName = "someone";
 		
 	}
 	
@@ -166,6 +219,11 @@ class ourConstants {
 		$this->dbsessuname = "";
 		$this->dbsesspword = "";
 		$this->dbsessname = "";
+		$this->localMailHostPort = "";
+		$this->sendgridAPI = "";
+		$this->sendgridFromEmail = "";
+		$this->sendgridFromName = "";
+		
 		return( array_keys( get_object_vars( $this ) ) );
 	
 	}

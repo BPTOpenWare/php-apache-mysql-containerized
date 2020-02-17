@@ -128,7 +128,7 @@ class SessionDBManager implements SessionHandlerInterface
 			
 			if ($this->cached) {
 				
-				$query = "UPDATE ODOSessions SET data=? WHERE SessionID=?";
+				$query = "UPDATE ODOSessions SET data=?, RevisionTS=CURRENT_TIMESTAMP WHERE SessionID=?";
 				
 			} else {
 				

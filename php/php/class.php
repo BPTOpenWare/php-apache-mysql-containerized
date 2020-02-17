@@ -3422,12 +3422,28 @@ class ODOLogging {
     	if(defined("USEREMOTEEMAILSERVER")&&(USEREMOTEEMAILSERVER == 1)) {
     		
 
-    		$query = "INSERT INTO MailQueue(rcvMail, subject, headers, message, encrypted) values(?,?,?,?,";
+    		$query = "INSERT INTO MailQueue(rcvMail, rcvName, subject, headers, message, encrypted) values(?,?,?,?,?,";
     		
     		if(defined("REMOTEEMAILENCRYPTED")&&(REMOTEEMAILENCRYPTED == 1)) {
     			
     			$query .= "1)";
     			
+    			$encMessage = new EncryptedData();
+    			$encMessage->decArray["rcvMail"] = $EmailObj->to;
+    			$encMessage->decArray["rcvName"] = $EmailObj->toName;
+    			$encMessage->decArray["subject"] = $EmailObj->subject;
+    			$encMessage->decArray["headers"] = $EmailObj->headers;
+    			$encMessage->decArray["message"] = $EmailObj->message;
+    			
+    			//decrypt messages if needed
+    			$_SESSION["ODOUtil"]->ODOEncrypt($encMessage);
+    				
+    			$EmailObj->headers = $encMessage->decArray["headers"];
+    			$EmailObj->message = $encMessage->decArray["message"];
+    			$EmailObj->subject = $encMessage->decArray["subject"];
+    			$EmailObj->to = $encMessage->decArray["rcvMail"];
+    			$EmailObj->toName = $encMessage->decArray["rcvName"];
+    			 
     		} else {
     			
     			$query .= "0)";
@@ -3437,8 +3453,8 @@ class ODOLogging {
     		
     		$mStm = $GLOBALS['globalref'][1]->prepare($query);
     		
-    		$mStm->bind_param("ssss", $EmailObj->to, $EmailObj->subject, $EmailObj->headers, $EmailObj->message);
-    		 
+    		$mStm->bind_param("sssss", $EmailObj->to, $EmailObj->toName, $EmailObj->subject, $EmailObj->headers, $EmailObj->message);
+    		
     		if(!$mStm->execute ()) {
     		
     			$Comment = "Error dropping an e-mail to MailQueue";
@@ -4094,10 +4110,11 @@ class ODOLogEvent {
 *******************************************/
 class ODOMailMessage {
      var $to;
+     var $toName;
      var $subject;
      var $message;
      var $headers;
-    
+     var $encrypted;
 }
 
 class JSONResponse {

@@ -14,8 +14,10 @@ RUN docker-php-ext-install bz2
 
 RUN mkdir /var/www/html/mobile
 RUN mkdir /var/www/html/app
-RUN mkdir /var/www/html/vendor
+RUN mkdir /var/www/vendor
 RUN mkdir /var/www/dump
+RUN mkdir /var/www/cache
+RUN chmod 777 /var/www/cache
 COPY php/class.php /var/www/html/class.php
 COPY php/enc.php /var/www/html/enc.php
 COPY php/GetFile.php /var/www/html/GetFile.php
