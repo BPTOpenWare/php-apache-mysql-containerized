@@ -200,13 +200,13 @@ class ourConstants {
 		$this->SHA256h = '$5$rounds=5000$REPLACEMEWITHAHASHSALTKEY$';
 		$this->SHA512h = '$6$rounds=5000$REPLACEMEWITHAHASHSALTKEY$';
 		$this->dbipadd = "127.0.0.1";
-		$this->dbuname = "TESTACCT";
-		$this->dbpword = "testacct";
+		$this->dbuname = "bptuname";
+		$this->dbpword = "password";
 		$this->dbname = "BPTPOINT";
 		$this->dbsessipadd = "127.0.0.1";
-		$this->dbsessuname = "TESTACCTSESS";
-		$this->dbsesspword = "testacctsess";
-		$this->dbsessname = "BPTPOINTSESS";
+		$this->dbsessuname = "bptuname";
+		$this->dbsesspword = "password";
+		$this->dbsessname = "BPTPOINT";
 		$this->useLocalMail = TRUE;
 		$this->localMailHostPort = "127.0.0.1:25";
 		$this->sendgridAPI = "";
