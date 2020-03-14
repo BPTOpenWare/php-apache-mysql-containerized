@@ -18,6 +18,7 @@ RUN mkdir /var/www/vendor
 RUN mkdir /var/www/dump
 RUN mkdir /var/www/cache
 RUN chmod 777 /var/www/cache
+RUN chmod 777 /var/www/dump
 COPY php/class.php /var/www/html/class.php
 COPY php/enc.php /var/www/html/enc.php
 COPY php/GetFile.php /var/www/html/GetFile.php

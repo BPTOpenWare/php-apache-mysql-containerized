@@ -1,4 +1,4 @@
 #!/bin/sh
 
-/usr/sbin/crond -f -L /var/log/cronlog
+/usr/sbin/crond -f -c /etc/crontabs
 

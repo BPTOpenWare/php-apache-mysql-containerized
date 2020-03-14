@@ -1,0 +1,5 @@
+#!/bin/sh
+
+/usr/local/bin/php /etc/periodic/phpjobs/ClearOldSessions.php
+
+

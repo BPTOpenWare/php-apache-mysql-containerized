@@ -97,6 +97,8 @@ class ourConstants {
 	
 	private $sendgridFromName = "";
 	
+	private $useMobileRedirect = TRUE;
+	
 	function __construct() {
 		
 		$this->aesKey = "REPLACEMEWITHARANDOMKEYOFEQUALLN";
@@ -105,19 +107,20 @@ class ourConstants {
 		$this->SHA256h = '$5$rounds=5000$REPLACEMEWITHAHASHSALTKEY$';
 		$this->SHA512h = '$6$rounds=5000$REPLACEMEWITHAHASHSALTKEY$';
 		$this->dbipadd = "mysqlmaster";
-		$this->dbuname = "bptuname";
+		$this->dbuname = "TESTACCT";
 		$this->dbpword = "testacct";
 		$this->dbname = "BPTPOINT";
 		$this->useDBSession = TRUE;
 		$this->dbsessipadd = "mysqlmaster";
-		$this->dbsessuname = "bptunamesess";
+		$this->dbsessuname = "TESTACCTSESS";
 		$this->dbsesspword = "testacctsess";
 		$this->dbsessname = "BPTPOINTSESS";
 		$this->useLocalMail = TRUE;
 		$this->localMailHostPort = "127.0.0.1:25";
 		$this->sendgridAPI = "";
-		$this->sendgridFromEmail = "someone@example.com";
-		$this->sendgridFromName = "someone";
+		$this->sendgridFromEmail = "nowhere@nowhere.net";
+		$this->sendgridFromName = "No Where";
+		$this->useMobileRedirect = TRUE;
 	}
 	
 	public function getAesKey() {
@@ -188,23 +191,27 @@ class ourConstants {
 		return $this->sendgridFromName;
 	}
 	
+	public function getUseMobileRedirect() {
+		return $this->useMobileRedirect;
+	}
+	
 	function __wakeup() {
 		$this->aesKey = "REPLACEMEWITHARANDOMKEYOFEQUALLN";
 		$this->SHA256h = '$5$rounds=5000$REPLACEMEWITHAHASHSALTKEY$';
 		$this->SHA512h = '$6$rounds=5000$REPLACEMEWITHAHASHSALTKEY$';
-		$this->dbipadd = "mysqlmaster";
-		$this->dbuname = "bptuname";
+		$this->dbipadd = "127.0.0.1";
+		$this->dbuname = "TESTACCT";
 		$this->dbpword = "testacct";
 		$this->dbname = "BPTPOINT";
-		$this->dbsessipadd = "mysqlmaster";
-		$this->dbsessuname = "bptunamesess";
+		$this->dbsessipadd = "127.0.0.1";
+		$this->dbsessuname = "TESTACCTSESS";
 		$this->dbsesspword = "testacctsess";
 		$this->dbsessname = "BPTPOINTSESS";
 		$this->useLocalMail = TRUE;
 		$this->localMailHostPort = "127.0.0.1:25";
 		$this->sendgridAPI = "";
-		$this->sendgridFromEmail = "someone@example.com";
-		$this->sendgridFromName = "someone";
+		$this->sendgridFromEmail = "nowhere@nowhere.net";
+		$this->sendgridFromName = "No Where";
 		
 	}
 	
